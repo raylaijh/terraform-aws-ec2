@@ -52,13 +52,13 @@ resource "aws_instance" "web" {
   }
 }
 
-terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "hashicorp-raymond-test"
+#terraform {
+#  backend "remote" {
+#    hostname = "app.terraform.io"
+#    organization = "hashicorp-raymond-test"
 
-    workspaces {
-      name = "aws-simple"
-    }
-  }
-}
+#    workspaces {
+#      name = "aws-simple"
+#    }
+#  }
+#}
