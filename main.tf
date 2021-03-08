@@ -3,16 +3,15 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 3.0"
-      region = ap-southeast-1
     }
   }
 }
 
 
 
-#provider "aws" {
-#  region = var.region
-#}
+provider "aws" {
+  region = "ap-southeast-1"
+}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
