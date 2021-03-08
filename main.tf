@@ -9,9 +9,9 @@ terraform {
 
 
 
-provider "aws" {
-  region = var.region
-}
+#provider "aws" {
+#  region = var.region
+#}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
@@ -30,15 +30,15 @@ data "aws_ami" "ubuntu" {
 }
 
 variable "region" {
-  default = []
+  default = ap-southeast-1
 }
 
 variable "instance_count" {
-  default = []
+  default = 1
 }
 
 variable "instance_type" {
-  default = []
+  default = "t2.micro"
 }
 
 
