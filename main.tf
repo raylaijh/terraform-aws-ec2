@@ -3,7 +3,7 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 3.0"
-      region = var.region
+      region = ap-southeast-1
     }
   }
 }
