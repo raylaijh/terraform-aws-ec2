@@ -30,11 +30,11 @@ data "aws_ami" "ubuntu" {
 }
 
 variable "region" {
-  default = ap-southeast-1
+  default = "ap-southeast-1"
 }
 
 variable "instance_count" {
-  default = 1
+  default = "1"
 }
 
 variable "instance_type" {
