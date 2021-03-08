@@ -43,6 +43,13 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "access" {
+  default = []
+}
+
+variable "secret" {
+  default = []
+}
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
