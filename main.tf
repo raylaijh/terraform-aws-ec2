@@ -39,7 +39,7 @@ resource "aws_instance" "foo" {
   
 
   network_interface {
-    network_interface_id = eni-0e05f4c7fea01ca49 #hardcoded
+    network_interface_id = "eni-0e05f4c7fea01ca49" #hardcoded
     device_index         = 0
   }
 
