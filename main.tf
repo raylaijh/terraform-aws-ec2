@@ -11,8 +11,8 @@ terraform {
 
 provider "aws" {
   region = "ap-southeast-1"
-  access_key = var.access
-  secret_key = var.secret
+ # access_key = var.access
+ # secret_key = var.secret
 }
 
 data "aws_ami" "ubuntu" {
@@ -43,13 +43,13 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "access" {
-  default = []
-}
+#variable "access" {
+#  default = []
+#}
 
-variable "secret" {
-  default = []
-}
+#variable "secret" {
+#  default = []
+#}
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
