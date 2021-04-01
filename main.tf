@@ -41,7 +41,7 @@ resource "aws_instance" "foo" {
     Name = "helloworld"
     }
   
-  subnet_id = "subnet-0bbb06171eb0cbf91"
+  subnet_id = var.subnet_id
   #network_interface {
   #  network_interface_id = var.network_interface_id
   #  device_index         = 0

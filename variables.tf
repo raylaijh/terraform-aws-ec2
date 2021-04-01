@@ -1,4 +1,4 @@
-variable "network_interface_id" {
+variable "subnet_id" {
   type = string
   #default = ""
 }
