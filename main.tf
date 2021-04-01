@@ -27,6 +27,15 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
+resource "aws_eip" "foo" {
+  instance = aws_instance.foo.id
+  vpc      = true
+}
+
+resource "aws_eip_association" "foo" {
+  instance_id   = aws_instance.foo.id
+  allocation_id = aws_eip.foo.id
+}
 
 
 resource "aws_instance" "foo" {
