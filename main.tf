@@ -36,6 +36,7 @@ resource "aws_instance" "foo" {
   user_data = <<-EOF
 		          #! /bin/bash
               sudo timedatectl set-timezone Asia/Manila
+              timedatectl
               EOF
   tags = {
     Name = "helloworld"
