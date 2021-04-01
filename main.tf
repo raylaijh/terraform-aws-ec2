@@ -32,7 +32,13 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "foo" {
   ami           = data.aws_ami.ubuntu.id # ap-southeast-1
   instance_type = "t2.micro"
-  
+  user_data = << EOF
+		#! /bin/bash
+                sudo apt-get update
+                sudo hostnamectl set-hostname bdo.poc.example.com
+                sudo hostname
+
+	EOF
   tags = {
     Name = "helloworld"
     }
