@@ -1,8 +1,8 @@
 # Outputs file
-output "catapp_url" {
+output "ec2_pub_url" {
   value = "http://${aws_eip.foo.public_dns}"
 }
 
-output "catapp_ip" {
+output "ec2_pub_ip" {
   value = "http://${aws_eip.foo.public_ip}"
 }
