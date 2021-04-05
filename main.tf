@@ -40,35 +40,20 @@ resource "aws_eip_association" "foo" {
 
 resource "aws_instance" "foo" {
   ami           = data.aws_ami.ubuntu.id # ap-southeast-1
-  instance_type = "t2.micro"
-  key_name      = "raymond_macbook"
-  user_data = <<-EOF
-		          #! /bin/bash
-              sudo timedatectl set-timezone Asia/Manila
-              timedatectl
-              EOF
+  instance_type = var.instance_type
+  key_name      = var.ssh_key
+  user_data = templatefile("${path.module}/templates/userdata.tpl")
+
   tags = {
-    Name = "helloworld"
+    Name = var.instance_name
     }
   
   subnet_id = var.subnet_id
-  #network_interface {
-  #  network_interface_id = var.network_interface_id
-  #  device_index         = 0
-  #}
+  
 
   credit_specification {
     cpu_credits = "unlimited"
   }
 }
 
-terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "hashicorp-raymond-test"
 
-    workspaces {
-      name = "aws-simple"
-    }
-  }
-}
