@@ -42,10 +42,7 @@ resource "aws_instance" "foo" {
   ami           = data.aws_ami.ubuntu.id # ap-southeast-1
   instance_type = var.instance_type
   key_name      = var.ssh_key
-  user_data = templatefile("${path.module}/templates/userdata.tpl", {
-    timezone = "Asia/Manila"
-
-  }
+  user_data = "${file("${path.module}/files/timezone.sh")}"
   
   )
 
