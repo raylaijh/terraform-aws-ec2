@@ -44,7 +44,7 @@ resource "aws_instance" "foo" {
   key_name      = var.ssh_key
   user_data = "${file("${path.module}/files/timezone.sh")}"
   
-  )
+}
 
   tags = {
     Name = var.instance_name
