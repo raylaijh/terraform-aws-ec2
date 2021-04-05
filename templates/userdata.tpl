@@ -1,3 +1,2 @@
- #! /bin/bash
-              sudo timedatectl set-timezone Asia/Manila
-             
+sudo timedatectl set-timezone ${timezone}
+              
